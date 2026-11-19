@@ -121,7 +121,7 @@ public class MainActivity extends Activity {
                 JSONObject json=new JSONObject(body); JSONArray data=json.optJSONArray("data");
                 if (data!=null && data.length()>0) {
                     String current=model.getText().toString().trim();
-                    if (current.isEmpty()) model.setText(data.getJSONObject(0).optString("id",""));
+                    if (current.isEmpty()) { String firstModel = data.getJSONObject(0).optString("id",""); runOnUiThread(() -> model.setText(firstModel)); }
                 }
                 runStatus("Connected · Models loaded: "+(data==null?0:data.length()), GREEN);
                 append("\n[System] Provider connection successful.\n");
