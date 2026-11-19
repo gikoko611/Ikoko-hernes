@@ -41,6 +41,7 @@ jobs:
           mkdir -p app/src/main/res/drawable-nodpi
           base64 -d app/src/main/res/drawable-nodpi/ic_launcher.jpg.b64 > app/src/main/res/drawable-nodpi/ic_launcher.jpg
           test -s app/src/main/res/drawable-nodpi/ic_launcher.jpg
+          rm app/src/main/res/drawable-nodpi/ic_launcher.jpg.b64
       - name: Validate project files
         run: |
           test -f settings.gradle
