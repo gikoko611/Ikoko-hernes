@@ -21,6 +21,7 @@ import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.zip.*;
+import java.security.KeyStore;
 import javax.crypto.*;
 import javax.crypto.spec.GCMParameterSpec;
 import android.security.keystore.*;
@@ -76,7 +77,7 @@ public class MainActivity extends Activity {
         root.setBackgroundColor(BG); outer.addView(root); setContentView(outer);
         TextView title=text("G.I  IKOKO HERN\u200bESS",25,GOLD,true); root.addView(title);
         TextView sub=text("AI HARNESS  •  ANDROID 10  •  ARMv7",10,GREEN,true);root.addView(sub);
-        status=text("● READY  |  Local tools available",11,GOLD);gap(root,8);root.addView(status);
+        status=text("● READY  |  Local tools available",11,GOLD,true);gap(root,8);root.addView(status);
         HorizontalScrollView hs=new HorizontalScrollView(this);nav=new LinearLayout(this);nav.setOrientation(0);hs.addView(nav);
         String[][] items={{"AI Agent","chat"},{"Providers","provider"},{"Skills","skills"},{"Projects","projects"},{"Tools","tools"},{"3D Studio","3d"},{"Video","video"}};
         for(String[] it:items){Button b=button(it[0]);LinearLayout.LayoutParams q=new LinearLayout.LayoutParams(-2,48);q.rightMargin=6;q.topMargin=10;nav.addView(b,q);b.setOnClickListener(v->showPage(it[1]));}
