@@ -17,6 +17,7 @@ import org.json.*;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.zip.*;
@@ -105,6 +106,7 @@ public class MainActivity extends Activity {
         model=field("Model ID (auto-filled from /models)",false);addField(content,model);
         Button save=button("SAVE + TEST + LOAD MODELS");gap(content,10);content.addView(save,lp(-2));
         save.setOnClickListener(v->connectProvider());
+        restoreProvider();
         TextView info=text("Provider values are stored on this device. API keys use Android Keystore AES-GCM. Never share your key.",11,0xffc7b9aa,false);gap(content,10);content.addView(info);
     }
     private String cleanBase(){
