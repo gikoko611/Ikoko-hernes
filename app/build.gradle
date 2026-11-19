@@ -15,7 +15,7 @@ android {
         ndk { abiFilters 'armeabi-v7a' }
     }
 
-    compileOptions {
+    buildTypes {\n        release { signingConfig signingConfigs.debug }\n    }\n\n    compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
