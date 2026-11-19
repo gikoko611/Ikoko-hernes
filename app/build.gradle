@@ -10,12 +10,17 @@ android {
         applicationId 'com.ikoko.herness'
         minSdk 23
         targetSdk 29
-        versionCode 1
-        versionName '0.1.0'
+        versionCode 2
+        versionName '1.0.0'
         ndk { abiFilters 'armeabi-v7a' }
     }
 
-    buildTypes {\n        release { signingConfig signingConfigs.debug }\n    }\n\n    compileOptions {
+    buildTypes {
+        debug { }
+        release { signingConfig signingConfigs.debug; minifyEnabled false }
+    }
+
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
