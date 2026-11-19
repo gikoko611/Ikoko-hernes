@@ -2,6 +2,8 @@ name: G.I KO KO HARNESS PRO - AndroidHarness ARMv7 Migration Build
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ harness-migration ]
 
 permissions:
   contents: read
