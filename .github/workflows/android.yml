@@ -36,6 +36,11 @@ jobs:
         run: |
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+      - name: Install uploaded launcher icon
+        run: |
+          mkdir -p app/src/main/res/drawable-nodpi
+          base64 -d app/src/main/res/drawable-nodpi/ic_launcher.jpg.b64 > app/src/main/res/drawable-nodpi/ic_launcher.jpg
+          test -s app/src/main/res/drawable-nodpi/ic_launcher.jpg
       - name: Validate project files
         run: |
           test -f settings.gradle
